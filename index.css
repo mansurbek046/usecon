@@ -1,0 +1,242 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  padding: 0;
+  height: 100vh;
+  background: url("bg.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+p{
+  display: inline-block;
+}
+.full-text{
+  background-color: #000820;
+  width: 100%;
+  padding: 15px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: #00A1FF;
+  font-weight: bold;
+  font-family: sans-serif;
+  display: block;
+  position: absolute;
+  transform: translateY(-1000px);
+  max-height: 100vh;
+}
+
+.full-text .text{
+  overflow: auto;
+  max-height: 70vh;
+}
+
+@keyframes to-down{
+  from{
+    transform: translateY(-1000px);
+  }to{
+    transform: translateY(0px);
+  }
+}
+@keyframes to-up{
+    from{
+    transform: translateY(0px);
+  }to{
+    transform: translateY(-1000px);
+  }
+}
+
+#down{
+  animation-name: to-down;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+#up{
+  animation-name: to-up;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+
+.close{
+  display: inline-block;
+  transform: translateX(45vw);
+  border: none;
+  font-size: 30px;
+  background: none;
+  padding: .1px;
+  margin-top: 10px;
+}
+.close:active{
+  opacity: .5;
+}
+
+.random{
+  margin: auto;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 40px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.btn-get-one,.btn-show-hide{
+  display: block;
+  border: none;
+  background: #000820;
+  color: #00A1FF;
+  padding: 12px 25px;
+  border-radius: 10px;
+  margin: 30px auto;
+  margin-bottom: 60px;
+  font-weight: bold;
+  transition: .5s;
+}
+
+.btn-get-one:active,.btn-show-hide:active{
+  opacity: .3;
+}
+
+.btn-show-hide{
+  padding: 12px;
+  display: inline-block;
+  margin: 0px;
+}
+
+.amount{
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: none;
+  padding: 10px 0;
+}
+
+.amount input{
+  border: 1px solid rgba(255, 255, 255, .7);
+  background: rgba(255, 255, 255, .2);
+  width: 60px;
+  height: 30px;
+  outline: none;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: .4s;
+  display: none;
+}
+
+.amount input:hover{
+  background: rgba(0, 8, 32, .4);
+  border-color: #00A1FF; 
+  color: #00A1FF;
+}
+.amount p{
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 25px;
+}
+
+a.c{
+  display: block;
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: courier;
+  margin: auto;
+  text-align: center;
+  margin-top: 45vh;
+}
+
+@keyframes on{
+  from{
+    transform: rotate(transparent);
+  }to{
+    transform: rotate(90deg);
+  }
+}
+@keyframes off{
+  from{
+    transform: rotate(90deg);
+  }to{
+    transform: rotate(0deg);
+  }
+}
+
+#on{
+  animation-name: on;
+  animation-fill-mode: forwards;
+  animation-duration: .5s;
+}
+#off{
+  animation-name: off;
+  animation-fill-mode: forwards;
+  animation-duration: .5s;
+}
+
+@keyframes right-center{
+  from{
+    transform: translateX(transparent);
+    opacity: 1;
+  }to{
+    transform: translateX(-32vw);
+    opacity: 0;
+  }
+}
+@keyframes left-center{
+  from{
+    transform: translateX(transparent);
+    opacity: 1;
+  }to{
+    transform: translateX(32vw);
+    opacity: 0;
+  }
+}
+
+#right-center{
+  animation-name: right-center;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+#left-center{
+  animation-name: left-center;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes center-right{
+  from{
+    transform: translateX(-32vw);
+    opacity: 0;
+  }to{
+    transform: translateX(0vw);
+    opacity: 1;
+  }
+}
+@keyframes center-left{
+  from{
+    transform: translateX(32vw);
+    opacity: 0;
+  }to{
+    transform: translateX(0vw);
+    opacity: 1;
+  }
+}
+
+#center-right{
+  animation-name: center-right;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+#center-left{
+  animation-name: center-left;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
