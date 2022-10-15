@@ -7,8 +7,6 @@ const down = () => {
   document.querySelector('.answer').setAttribute('id', 'down');
 }
 
-//Uzbek then here
-
 //Constitution of Uzbekistan (type Object)
 const constitution = {
   1: {
@@ -207,7 +205,6 @@ const constitution = {
   }
 }
 
-
 const get_one = () => {
   //Uzbek then here
   const bolim = Math.round(Math.random() * Object.keys(constitution).length);
@@ -248,8 +245,24 @@ const single = () => {
   }
 }
 
-let user_min = 1;
-let user_max = 128;
+let user = {
+  min: 1,
+  max: 128
+};
+
+document.querySelectorAll('.amount input').forEach((e) => {
+  e.addEventListener('change', () => {
+    if (e.value > 0 && e.value <= 128) {
+      user[e.name] = Number(e.value);
+    } else {
+      e.value = "";
+      user = {
+        min: 1,
+        max: 128
+      };
+    }
+  });
+});
 
 let simple_constitution = {};
 const get_one_between = () => {
@@ -261,7 +274,7 @@ const get_one_between = () => {
     }
   }
   //Uzbek then here
-  const modda = Math.floor(Math.random() * (user_max - user_min)) + user_min;
+  const modda = Math.floor(Math.random() * (user.max - user.min)) + user.min;
   document.querySelector('.text').innerHTML = simple_constitution[modda];
   document.querySelector('.num').innerHTML = document.querySelector('.modda').innerHTML = `${modda}-modda`;
 }
