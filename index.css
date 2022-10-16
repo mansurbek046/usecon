@@ -1,20 +1,24 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   outline: none;
+  user-select: none;
 }
-body{
+
+body {
   padding: 0;
   height: 100vh;
   background: url("bg.jpg");
   background-position: center center;
   background-size: cover;
 }
-p{
+
+p {
   display: inline-block;
 }
-.full-text{
+
+.full-text {
   background-color: #000820;
   width: 100%;
   padding: 15px;
@@ -24,44 +28,71 @@ p{
   font-weight: bold;
   font-family: sans-serif;
   display: block;
-  position: absolute;
+  position: fixed;
   transform: translateY(-1000px);
   max-height: 100vh;
 }
 
-.full-text .text{
+.full-text .text {
   overflow: auto;
   max-height: 70vh;
+  padding: 5px;
+  border: 1px solid #00A1FF;
+  transition: .3s;
+  border-radius: 5px;
 }
 
-@keyframes to-down{
-  from{
+.full-text .text:hover {
+  border-color: limegreen;
+  color: limegreen;
+}
+
+.copied{
+  font-size: 13px;
+  color: #000820;
+  background-color: lime;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 5px;
+  padding: 3px 5px 3px 3px;
+  font-family: courier;
+  position: absolute;
+  display: none;
+}
+
+@keyframes to-down {
+  from {
     transform: translateY(-1000px);
-  }to{
+  }
+
+  to {
     transform: translateY(0px);
   }
 }
-@keyframes to-up{
-    from{
+
+@keyframes to-up {
+  from {
     transform: translateY(0px);
-  }to{
+  }
+
+  to {
     transform: translateY(-1000px);
   }
 }
 
-#down{
+#down {
   animation-name: to-down;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-#up{
+
+#up {
   animation-name: to-up;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
 
 
-.close{
+.close {
   display: inline-block;
   transform: translateX(45vw);
   border: none;
@@ -70,11 +101,12 @@ p{
   padding: .1px;
   margin-top: 10px;
 }
-.close:active{
+
+.close:active {
   opacity: .5;
 }
 
-.random{
+.random {
   margin: auto;
   width: 100vw;
   display: flex;
@@ -85,7 +117,8 @@ p{
   color: white;
 }
 
-.btn-get-one,.btn-show-hide{
+.btn-get-one,
+.btn-show-hide {
   display: block;
   border: none;
   background: #000820;
@@ -98,26 +131,29 @@ p{
   transition: .5s;
 }
 
-.btn-get-one:active,.btn-show-hide:active{
+.btn-get-one:active,
+.btn-show-hide:active {
   opacity: .3;
 }
 
-.btn-show-hide{
+.btn-show-hide {
   padding: 12px;
   display: inline-block;
   margin: 0px;
 }
 
 .amount{
-  display: block;
   display: flex;
   align-items: center;
   justify-content: space-around;
   background: none;
   padding: 10px 0;
 }
+.parentAmount{
+  min-height: 68px;
+}
 
-.amount input{
+.amount input {
   border: 1px solid rgba(255, 255, 255, .7);
   background: rgba(255, 255, 255, .2);
   width: 60px;
@@ -133,18 +169,19 @@ p{
   display: none;
 }
 
-.amount input:hover{
+.amount input:hover {
   background: rgba(0, 8, 32, .4);
-  border-color: #00A1FF; 
+  border-color: #00A1FF;
   color: #00A1FF;
 }
-.amount p{
+
+.amount p {
   font-weight: bold;
   font-family: sans-serif;
   font-size: 25px;
 }
 
-a.c{
+a.c {
   display: block;
   color: black;
   text-decoration: none;
@@ -155,89 +192,112 @@ a.c{
   margin-top: 45vh;
 }
 
-@keyframes on{
-  from{
+@keyframes on {
+  from {
     transform: rotate(transparent);
-  }to{
+  }
+
+  to {
     transform: rotate(90deg);
   }
 }
-@keyframes off{
-  from{
+
+@keyframes off {
+  from {
     transform: rotate(90deg);
-  }to{
+  }
+
+  to {
     transform: rotate(0deg);
   }
 }
 
-#on{
+#on {
   animation-name: on;
   animation-fill-mode: forwards;
   animation-duration: .5s;
 }
-#off{
+
+#off {
   animation-name: off;
   animation-fill-mode: forwards;
   animation-duration: .5s;
 }
 
-@keyframes right-center{
-  from{
+@keyframes right-center {
+  from {
     transform: translateX(transparent);
     opacity: 1;
-  }to{
+  }
+
+  to {
     transform: translateX(-32vw);
     opacity: 0;
   }
 }
-@keyframes left-center{
-  from{
+
+@keyframes left-center {
+  from {
     transform: translateX(transparent);
     opacity: 1;
-  }to{
+  }
+
+  to {
     transform: translateX(32vw);
     opacity: 0;
   }
 }
 
-#right-center{
+#right-center {
   animation-name: right-center;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-#left-center{
+
+#left-center {
   animation-name: left-center;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
 
-@keyframes center-right{
-  from{
+@keyframes center-right {
+  from {
     transform: translateX(-32vw);
     opacity: 0;
-  }to{
-    transform: translateX(0vw);
-    opacity: 1;
   }
-}
-@keyframes center-left{
-  from{
-    transform: translateX(32vw);
-    opacity: 0;
-  }to{
+
+  to {
     transform: translateX(0vw);
     opacity: 1;
   }
 }
 
-#center-right{
+@keyframes center-left {
+  from {
+    transform: translateX(32vw);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0vw);
+    opacity: 1;
+  }
+}
+
+#center-right {
   animation-name: center-right;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-#center-left{
+
+#center-left {
   animation-name: center-left;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
 
+i {
+  color: darkorange !important;
+  font-weight: normal;
+  font-size: 14px;
+}
