@@ -1,2 +1,2 @@
 # usecon
-__O'zbekiston__ Resbuplikasi Konstitutsiyasi
+__O'zbekiston__ Resbuplikasi Konstitutsiyasi (eski)
